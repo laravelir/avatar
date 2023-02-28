@@ -1,7 +1,7 @@
 {
-    "name": "miladimos/package-skeleton",
+    "name": "laravelir/avatar",
     "description": "test description",
-    "homepage": "https://github.com/miladimos/package-skeleton",
+    "homepage": "https://github.com/laravelir/avatar",
     "type": "library",
     "version": "0.1.0",
     "keywords": [
@@ -22,7 +22,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Vendor\\Package\\": "src/"
+            "Laravelir\\Avatar\\": "src/"
         },
         "files": [
             "./src/helpers.php"
@@ -30,16 +30,16 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Vendor\\Package\\Tests\\": "tests"
+            "Laravelir\\Avatar\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Vendor\\Package\\Providers\\PackageServiceProvider"
+                "Laravelir\\Avatar\\Providers\\AvatarServiceProvider"
             ],
             "aliases": {
-                "Package": "Vendor\\Package\\Facades\\Package"
+                "Avatar": "Laravelir\\Avatar\\Facades\\Avatar"
             }
         }
     },

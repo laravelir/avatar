@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Package\Providers;
+namespace Laravelir\Avatar\Providers;
 
 use App\Http\Kernel;
 use Illuminate\Routing\Router;
@@ -8,15 +8,15 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Vendor\Package\Console\Commands\InstallPackageCommand;
-use Vendor\Package\Facades\Package;
+use Laravelir\Avatar\Console\Commands\InstallPackageCommand;
+use Laravelir\Avatar\Facades\Avatar;
 
-class PackageServiceProvider extends ServiceProvider
+class AvatarServiceProvider extends ServiceProvider
 {
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . "/../../config/package.php", 'package');
+        $this->mergeConfigFrom(__DIR__ . "/../../config/avatar.php", 'avatar');
 
         // $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
@@ -44,8 +44,8 @@ class PackageServiceProvider extends ServiceProvider
 
     private function registerFacades()
     {
-        $this->app->bind('package', function ($app) {
-            return new Package();
+        $this->app->bind('avatar', function ($app) {
+            return new Avatar();
         });
     }
 
@@ -72,8 +72,8 @@ class PackageServiceProvider extends ServiceProvider
     public function publishConfig()
     {
         $this->publishes([
-            __DIR__ . '/../../config/package.php' => config_path('package.php')
-        ], 'package-config');
+            __DIR__ . '/../../config/avatar.php' => config_path('avatar.php')
+        ], 'avatar-config');
     }
 
     // private function registerAssets()

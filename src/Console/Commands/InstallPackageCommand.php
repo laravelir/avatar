@@ -1,18 +1,18 @@
 <?php
 
-namespace Vendor\Package\Console\Commands;
+namespace Laravelir\Avatar\Console\Commands;
 
 use Illuminate\Console\Command;
 
 class InstallPackageCommand extends Command
 {
-    protected $signature = 'package:install';
+    protected $signature = 'avatar:install';
 
-    protected $description = 'Install the package Package';
+    protected $description = 'Install the package Avatar';
 
     public function handle()
     {
-        $this->line("\t... Welcome To Package Installer ...");
+        $this->line("\t... Welcome To Avatar Installer ...");
 
 
         // if (!empty(File::glob(database_path('migrations\*_create_packages_tables.php')))) {
